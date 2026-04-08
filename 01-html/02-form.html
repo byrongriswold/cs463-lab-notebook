@@ -5,11 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Exercise 02 - Form</title>
+    <style>
+      fieldset {
+        margin: 0;
+        border: 0;
+        padding: 0;
+      }
+    </style>
   </head>
   <body>
     <main>
-      <form method="post" action="/submit">
-        <h1>Roth IRA Calculator</h1>
+      <h1>Roth IRA Calculator</h1>
+      <form method="post" action="/submitform">
         <div>
           <label for="balance">Balance ($)</label>
           <br />
@@ -17,22 +24,21 @@
         </div>
         <br />
         <div>
-          <label for="contribution">Annual contribution (4)</label>
+          <label for="contribution">Annual contribution ($)</label>
           <br />
           <input type="text" id="contribution" name="contribution" />
         </div>
         <br />
-        <div>
-          Maximize contributions?
-          <br />
+        <fieldset>
+          <legend>Maximize contributions?</legend>
           <input type="radio" id="yes" name="maximize" value="yes" />
           <label for="yes">Yes</label>
           <input type="radio" id="no" name="maximize" value="no" />
           <label for="no">No</label>
-        </div>
+        </fieldset>
         <br />
         <div>
-          <label for="return-rate">Expected rate of return (5)</label>
+          <label for="return-rate">Expected rate of return (%)</label>
           <br />
           <input type="number" id="return-rate" name="return-rate" />
         </div>
