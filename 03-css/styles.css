@@ -9,6 +9,12 @@
   padding: 0;
 }
 
+.form-body {
+  background-color: #161678;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+
 .navigation {
   display: flex;
   align-items: center;
@@ -44,12 +50,6 @@
 
 .books.main-container {
   padding: 0 20px 60px 20px;
-}
-
-.form-body {
-  background-color: #161678;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
 }
 
 .container {
