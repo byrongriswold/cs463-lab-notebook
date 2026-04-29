@@ -1,12 +1,15 @@
 :root {
   --purple: #800080;
   --light-text-color: #fefefe;
+  --black: #000;
+  --white: #fff;
+  --neon-green: #39ff14;
 }
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
   min-height: 100vh;
-  background-color: rgb(14, 14, 14);
 }
 
 /* Exercise 01 - Center */
@@ -54,6 +57,95 @@ h1 {
 
 /* Exercise 02 - Flexbox */
 
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--black);
+  color: var(--white);
+  padding: 0 1rem;
+  height: 100px;
+}
+
+.h1 {
+  font-size: 1.75rem;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 20px;
+  font-size: 1.1rem;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: var(--white);
+  transition:
+    color 0.3s,
+    text-decoration-color 0.3s;
+}
+
+.nav-list li a:hover {
+  color: var(--neon-green);
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 2px;
+}
+
+.main {
+  display: flex;
+  align-items: stretch;
+  gap: 0.8rem;
+  padding: 1rem 4rem;
+}
+
+.section {
+  flex: 1 1 0;
+  padding: 1.5rem 1rem 0.5rem 1rem;
+  border: 1px solid var(--black);
+  border-radius: 15px;
+}
+
+.section h2 {
+  font-size: 1.25rem;
+}
+
+.section p {
+  font-size: 0.8rem;
+}
+
+.section figure {
+  margin: 1rem;
+}
+
+.section img {
+  display: block;
+  max-width: 80%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.section figcaption {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--black);
+  color: var(--white);
+  height: 60px;
+  font-size: 0.8rem;
+}
 /* Exercise 03 - CSS Grid */
 
 /* Exercise 04 - CSS Grid Areas */
