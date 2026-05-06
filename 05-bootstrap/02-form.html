@@ -12,6 +12,137 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </head>
   <body class="bg-light">
-    <h1 class="text-center m-4 fs-2">Roth IRA Calculator</h1>
+    <main class="container mt-5">
+      <div class="row">
+        <div class="col-12 col-lg-6 mx-auto">
+          <section class="bg-white border rounded pb-3">
+            <h1 class="text-center mt-5 mb-4 fs-2">Roth IRA Calculator</h1>
+            <form class="px-4" method="post" action="/submitform">
+              <div class="row mb-3">
+                <label for="balance" class="col-lg-6 col-form-label">
+                  Balance ($)
+                </label>
+                <div class="col-lg-6">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="balance"
+                    name="balance"
+                  />
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="contribution" class="col-lg-6 col-form-label"
+                  >Annual contribution ($)</label
+                >
+                <div class="col-lg-6">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="contribution"
+                    name="contribution"
+                  />
+                </div>
+              </div>
+              <fieldset class="row mb-3">
+                <legend class="col-lg-6 col-form-label pt-0">
+                  Maximize contributions?
+                </legend>
+                <div class="col-lg-6">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      id="yes"
+                      name="maximize"
+                      value="yes"
+                    />
+                    <label class="form-check-label" for="yes">Yes</label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      id="no"
+                      name="maximize"
+                      value="no"
+                    />
+                    <label class="form-check-label" for="no">No</label>
+                  </div>
+                </div>
+              </fieldset>
+              <div class="row mb-3">
+                <label class="col-lg-6 col-form-label" for="return-rate"
+                  >Expected return (%)</label
+                >
+                <div class="col-lg-6">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="return-rate"
+                    name="return-rate"
+                  />
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label class="col-lg-6 col-form-label" for="curr-age"
+                  >Current age</label
+                >
+                <div class="col-lg-6">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="curr-age"
+                    name="curr-age"
+                  />
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label class="col-lg-6 col-form-label" for="retire-age"
+                  >Retirement age</label
+                >
+                <div class="col-lg-6">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="retire-age"
+                    name="retire-age"
+                  />
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label class="col-lg-6 col-form-label" for="tax-rate"
+                  >Tax rate (%)</label
+                >
+                <div class="col-lg-6">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="tax-rate"
+                    name="tax-rate"
+                  />
+                </div>
+              </div>
+              <div class="row my-4 g-2">
+                <div class="col-6">
+                  <button type="submit" class="btn btn-primary w-100">
+                    Calculate
+                  </button>
+                </div>
+                <div class="col-6">
+                  <button type="reset" class="btn btn-outline-secondary w-100">
+                    Reset
+                  </button>
+                </div>
+              </div>
+            </form>
+            <p class="px-4 text-secondary">
+              This exercise is a simplified version of the Roth IRA Calculator
+              <a href="https://calculator.net">Calculator.net</a>
+            </p>
+          </section>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
