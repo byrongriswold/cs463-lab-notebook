@@ -39,6 +39,8 @@ const fetchPokemon = async () => {
     }
   } catch (error) {
     console.error("Request failed", error);
+  } finally {
+    console.log("executes either way");
   }
 };
 
@@ -53,10 +55,10 @@ const createCard = function (pokemonData) {
 
   const img = document.createElement("img");
   img.src = pokemonData.sprites.other["official-artwork"].front_default;
-  img.alt = `image of ${pokemonData.name}`;
+  img.alt = pokemonData.name;
   img.width = 160;
-  card.append(name);
-  card.append(img);
+  img.height = 160;
+  card.append(name, img);
 
   const pokemonTypes = document.createElement("div");
   pokemonTypes.classList.add("pokemon-types");

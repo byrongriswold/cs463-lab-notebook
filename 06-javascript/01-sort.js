@@ -22,29 +22,36 @@ const pokemons = [
 ];
 
 const sortPokemons = function logSortedPokemons(sortType) {
-  const sortedPokemons = [];
+  const sortedPokemons = [...pokemons];
 
-  sortedPokemons.push(...pokemons);
-  if (sortType === "alphabetically, in ascending order") {
-    sortedPokemons.sort((a, b) => {
-      if (a.name <= b.name) {
-        return -1;
-      }
-      return 1;
-    });
-  } else if (sortType === "alphabetically, in descending order") {
-    sortedPokemons.sort((a, b) => {
-      if (a.name >= b.name) {
-        return -1;
-      }
-      if (a.name < b.name) {
+  switch (sortType) {
+    case "alphabetically, in ascending order":
+      sortedPokemons.sort((a, b) => {
+        if (a.name <= b.name) {
+          return -1;
+        }
         return 1;
-      }
-    });
-  } else if (sortType === "numerically, in ascending order") {
-    sortedPokemons.sort((a, b) => a.id - b.id);
-  } else if (sortType === "numerically, in descending order") {
-    sortedPokemons.sort((a, b) => b.id - a.id);
+      });
+      break;
+
+    case "alphabetically, in descending order":
+      sortedPokemons.sort((a, b) => {
+        if (a.name >= b.name) {
+          return -1;
+        }
+        if (a.name < b.name) {
+          return 1;
+        }
+      });
+      break;
+
+    case "numerically, in ascending order":
+      sortedPokemons.sort((a, b) => a.id - b.id);
+      break;
+
+    case "numerically, in descending order":
+      sortedPokemons.sort((a, b) => b.id - a.id);
+      break;
   }
   return sortedPokemons;
 };

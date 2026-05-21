@@ -33,6 +33,11 @@ body {
   height: 1.5rem;
 }
 
+.hidden-label {
+  position: absolute;
+  left: -9999px;
+}
+
 .loading {
   display: flex;
   flex-direction: column;

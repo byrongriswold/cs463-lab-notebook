@@ -57,16 +57,17 @@ console.log(forEachPokemon());
 console.groupEnd();
 
 const filterPokemons = function (pokemonType) {
-  const filteredPokemons = pokemons.filter((pokemon) =>
-    pokemon.types.includes(pokemonType),
-  );
-  filteredPokemons.sort((a, b) => {
-    if (a.name <= b.name) {
-      return -1;
-    }
-    return 1;
-  });
-  return filteredPokemons.map((pokemon) => pokemon.name);
+  const filteredPokemons = pokemons
+    .filter((pokemon) => pokemon.types.includes(pokemonType))
+    .sort((a, b) => {
+      if (a.name <= b.name) {
+        return -1;
+      }
+      return 1;
+    })
+    .map((pokemon) => pokemon.name);
+
+  return filteredPokemons;
 };
 
 console.group("=========== filterPokemons =========== ");

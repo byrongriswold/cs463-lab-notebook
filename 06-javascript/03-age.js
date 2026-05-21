@@ -1,25 +1,29 @@
-const calculateAge = function (birthDate) {
-  const regex = /[0-9]+-(0[0-9]|1[0-2])-([0-2][0-9]|3[0-1])/;
-  if (!birthDate.match(regex)) {
+const calculateAge = function (dateString) {
+  const birthDate = new Date(dateString);
+  const today = new Date();
+
+  if (isNaN(birthDate.getTime())) {
     return "Error: Invalid date format";
   }
-  let [year, month, day] = birthDate.split("-");
-  [year, month, day] = [year, month, day].map(Number);
-  if (
-    year > 2026 ||
-    (year == 2026 && month > 5) ||
-    (year == 2026 && month == 5 && day > 18)
-  ) {
-    return "Error: Birth date cannot be in the future";
+
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const monthsDiff = today.getMonth() - birthDate.getMonth();
+  const dayDiff = today.getDate() - birthDate.getDate();
+
+  if (monthsDiff < 0 || (monthsDiff === 0 && dayDiff < 0)) age--;
+
+  if (age === 1) {
+    return "You are 1 year old";
   }
-  if (
-    year < 1901 ||
-    (year == 1901 && month < 5) ||
-    (year == 1901 && month == 5 && day < 18)
-  ) {
+
+  if (age > 125) {
     return "Are you sure you are more than 125 years old?";
   }
-  age = month < 5 || (month == 5 && day < 19) ? 2026 - year : 2026 - year - 1;
+
+  if (age < 0) {
+    return "Error: Birth date cannot be in the future";
+  }
+
   return `You are ${age} years old`;
 };
 
