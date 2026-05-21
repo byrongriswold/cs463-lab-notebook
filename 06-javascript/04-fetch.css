@@ -6,9 +6,85 @@
 }
 
 body {
+  margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   color: var(--main-color);
   background-color: var(--bg-color);
 }
 
-/* Add your code here */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  height: 3.5rem;
+  background-color: var(--pokemon-yellow);
+}
+
+.brand-logo {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.search-input {
+  border-radius: 4px;
+  border: 0;
+  padding: 0.5rem;
+  height: 1.5rem;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  height: 80vh;
+  color: var(--main-light-color);
+  font-size: 0.75rem;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 3rem 4rem;
+}
+
+.card {
+  background-color: var(--main-light-color);
+  padding: 1rem;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.card:hover {
+  background-color: var(--pokemon-yellow);
+}
+
+.name {
+  margin-top: 0;
+  font-size: 1rem;
+}
+
+.pokemon-types {
+  display: flex;
+  justify-content: center;
+  gap: 0.25rem;
+  margin-top: 1rem;
+}
+
+.pokemon-types div {
+  padding: 0.25rem;
+  font-size: 0.7rem;
+}
+
+.message {
+  text-align: center;
+  font-size: 1.25rem;
+  color: var(--main-light-color);
+}
