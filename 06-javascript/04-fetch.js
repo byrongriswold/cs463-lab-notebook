@@ -96,7 +96,7 @@ search.addEventListener("keyup", (event) => {
       let found = false;
 
       for (const type of types.children) {
-        if (type.textContent.includes(event.target.value)) {
+        if (type.textContent === event.target.value) {
           found = true;
         }
       }
